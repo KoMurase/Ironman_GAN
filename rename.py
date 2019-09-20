@@ -22,9 +22,9 @@ for index, img in enumerate(all_imgs, 1):
     if ori_name == "rename.py":
         continue
     # 通し番号の桁を揃える
-    num = str(index).zfill(digit)
+    num = str(index-1)
     # 新しいファイル名の生成、ディレクトリと拡張子は元のまま
-    new_name = "{0}_{1}{2}".format(prefix, num, suffix)
+    new_name = "{0}{1}".format(num, suffix)
     new_path = os.path.join(ori_dir, new_name)
     # 変更後と同じ名前のファイルが存在する場合はスキップ
     if os.path.exists(new_path):
